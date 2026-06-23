@@ -71,9 +71,10 @@ def show():
                         st.divider()
                         st.markdown("##### 🏆 Candidate Rankings")
                         df = pd.DataFrame(rankings)
-                        cols = [c for c in ["rank", "name", "match_percentage", "rank_score"] if c in df.columns]
-                        if cols:
-                            df = df[cols]
-                            df.columns = [c.replace("_", " ").title() for c in cols]
-                            df["Match %"] = df["Match %"].apply(lambda x: f"{x:.1f}%")
-                            st.dataframe(df, use_container_width=True, hide_index=True)
+                        keep = [c for c in ["rank", "name", "match_percentage", "rank_score"] if c in df.columns]
+                        if keep:
+                            df = df[keep]
+                            st.dataframe(df, use_container_width=True, hide_index=True, column_config={
+                                "match_percentage": st.column_config.ProgressColumn("Match %", format="%.1f%%", min_value=0, max_value=100),
+                                "rank_score": st.column_config.NumberColumn("Rank Score", format="%.1f"),
+                            })

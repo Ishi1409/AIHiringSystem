@@ -7,14 +7,13 @@ __pycache__/
 venv/
 env/
 
-# Data files (local JSON storage)
-data/*.json
-
-# Uploaded files
-uploads/*
-
-# Streamlit
+# Sensitive / secrets
+.env
 .streamlit/secrets.toml
+
+# Uploaded files (user generated)
+uploads/*
+!uploads/.gitkeep
 
 # IDE
 .vscode/
@@ -26,6 +25,8 @@ uploads/*
 .DS_Store
 Thumbs.db
 
-# Test file
+# Test files
 test_imports.py
 test_all.py
+test_fallback.py
+test_auth.py

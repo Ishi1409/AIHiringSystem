@@ -50,4 +50,7 @@ def show():
         else:
             st.markdown(f"**{len(all_people)}** total candidates")
             df = pd.DataFrame(all_people)
+            df["skills"] = df["skills"].apply(
+                lambda x: ", ".join(x) if isinstance(x, list) else (x or "")
+            )
             st.dataframe(df, use_container_width=True, hide_index=True)

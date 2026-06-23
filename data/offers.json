@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "O0001",
+    "candidate_id": "C0351",
+    "job_id": "J0003",
+    "salary_offered": 172242,
+    "benefits": "Full benefits, equity",
+    "status": "rejected",
+    "sent_date": "2026-06-13T13:09:01.970399",
+    "created_at": "2026-06-03T13:09:01.970440"
+  },
+  {
+    "id": "O0002",
+    "candidate_id": "C0286",
+    "job_id": "J0011",
+    "salary_offered": 92626,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-13T13:09:01.970481",
+    "created_at": "2026-06-20T13:09:01.970497"
+  },
+  {
+    "id": "O0003",
+    "candidate_id": "C0410",
+    "job_id": "J0005",
+    "salary_offered": 54087,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-16T13:09:01.970526",
+    "created_at": "2026-06-13T13:09:01.970539"
+  },
+  {
+    "id": "O0004",
+    "candidate_id": "C0423",
+    "job_id": "J0010",
+    "salary_offered": 82357,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-13T13:09:01.970660",
+    "created_at": "2026-06-22T13:09:01.970676"
+  },
+  {
+    "id": "O0005",
+    "candidate_id": "C0221",
+    "job_id": "J0006",
+    "salary_offered": 223081,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-14T13:09:01.970707",
+    "created_at": "2026-06-18T13:09:01.970720"
+  },
+  {
+    "id": "O0006",
+    "candidate_id": "C0180",
+    "job_id": "J0015",
+    "salary_offered": 124256,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-05-31T13:09:01.970750",
+    "created_at": "2026-06-14T13:09:01.970763"
+  },
+  {
+    "id": "O0007",
+    "candidate_id": "C0074",
+    "job_id": "J0012",
+    "salary_offered": 101570,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-05-24T13:09:01.970793",
+    "created_at": "2026-06-20T13:09:01.970808"
+  },
+  {
+    "id": "O0008",
+    "candidate_id": "C0149",
+    "job_id": "J0004",
+    "salary_offered": 58424,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-15T13:09:01.970847",
+    "created_at": "2026-05-28T13:09:01.970860"
+  },
+  {
+    "id": "O0009",
+    "candidate_id": "C0348",
+    "job_id": "J0011",
+    "salary_offered": 151250,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-05-25T13:09:01.970887",
+    "created_at": "2026-06-19T13:09:01.970899"
+  },
+  {
+    "id": "O0010",
+    "candidate_id": "C0458",
+    "job_id": "J0005",
+    "salary_offered": 129173,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-04T13:09:01.970929",
+    "created_at": "2026-06-09T13:09:01.970942"
+  },
+  {
+    "id": "O0011",
+    "candidate_id": "C0348",
+    "job_id": "J0015",
+    "salary_offered": 134536,
+    "benefits": "Full benefits, equity",
+    "status": "rejected",
+    "sent_date": "2026-05-29T13:09:01.970970",
+    "created_at": "2026-06-16T13:09:01.970983"
+  },
+  {
+    "id": "O0012",
+    "candidate_id": "C0129",
+    "job_id": "J0003",
+    "salary_offered": 159133,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-06-13T13:09:01.971011",
+    "created_at": "2026-06-20T13:09:01.971025"
+  },
+  {
+    "id": "O0013",
+    "candidate_id": "C0153",
+    "job_id": "J0010",
+    "salary_offered": 214710,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-17T13:09:01.971053",
+    "created_at": "2026-06-10T13:09:01.971065"
+  },
+  {
+    "id": "O0014",
+    "candidate_id": "C0401",
+    "job_id": "J0015",
+    "salary_offered": 164528,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-06T13:09:01.971092",
+    "created_at": "2026-06-08T13:09:01.971105"
+  },
+  {
+    "id": "O0015",
+    "candidate_id": "C0356",
+    "job_id": "J0006",
+    "salary_offered": 182072,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-11T13:09:01.971132",
+    "created_at": "2026-06-09T13:09:01.971144"
+  },
+  {
+    "id": "O0016",
+    "candidate_id": "C0239",
+    "job_id": "J0007",
+    "salary_offered": 157546,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-05-24T13:09:01.971171",
+    "created_at": "2026-06-05T13:09:01.971183"
+  },
+  {
+    "id": "O0017",
+    "candidate_id": "C0014",
+    "job_id": "J0013",
+    "salary_offered": 160341,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-03T13:09:01.971211",
+    "created_at": "2026-05-24T13:09:01.971224"
+  },
+  {
+    "id": "O0018",
+    "candidate_id": "C0155",
+    "job_id": "J0013",
+    "salary_offered": 113608,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-03T13:09:01.971251",
+    "created_at": "2026-06-05T13:09:01.971264"
+  },
+  {
+    "id": "O0019",
+    "candidate_id": "C0461",
+    "job_id": "J0010",
+    "salary_offered": 126898,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-18T13:09:01.971291",
+    "created_at": "2026-06-10T13:09:01.971304"
+  },
+  {
+    "id": "O0020",
+    "candidate_id": "C0344",
+    "job_id": "J0001",
+    "salary_offered": 171322,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-20T13:09:01.971341",
+    "created_at": "2026-06-21T13:09:01.971354"
+  },
+  {
+    "id": "O0021",
+    "candidate_id": "C0139",
+    "job_id": "J0014",
+    "salary_offered": 220362,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-03T13:09:01.971381",
+    "created_at": "2026-06-19T13:09:01.971393"
+  },
+  {
+    "id": "O0022",
+    "candidate_id": "C0421",
+    "job_id": "J0005",
+    "salary_offered": 198227,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-12T13:09:01.971419",
+    "created_at": "2026-05-26T13:09:01.971431"
+  },
+  {
+    "id": "O0023",
+    "candidate_id": "C0032",
+    "job_id": "J0002",
+    "salary_offered": 244110,
+    "benefits": "Health insurance, 401k",
+    "status": "rejected",
+    "sent_date": "2026-06-16T13:09:01.971459",
+    "created_at": "2026-06-06T13:09:01.971471"
+  },
+  {
+    "id": "O0024",
+    "candidate_id": "C0074",
+    "job_id": "J0009",
+    "salary_offered": 244097,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-15T13:09:01.971498",
+    "created_at": "2026-05-25T13:09:01.971510"
+  },
+  {
+    "id": "O0025",
+    "candidate_id": "C0346",
+    "job_id": "J0011",
+    "salary_offered": 90573,
+    "benefits": "Standard package",
+    "status": "rejected",
+    "sent_date": "2026-06-13T13:09:01.971536",
+    "created_at": "2026-05-30T13:09:01.971548"
+  },
+  {
+    "id": "O0026",
+    "candidate_id": "C0480",
+    "job_id": "J0001",
+    "salary_offered": 177128,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-20T13:09:01.971583",
+    "created_at": "2026-06-22T13:09:01.971596"
+  },
+  {
+    "id": "O0027",
+    "candidate_id": "C0079",
+    "job_id": "J0010",
+    "salary_offered": 81728,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-16T13:09:01.971624",
+    "created_at": "2026-06-19T13:09:01.971637"
+  },
+  {
+    "id": "O0028",
+    "candidate_id": "C0243",
+    "job_id": "J0001",
+    "salary_offered": 182593,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-21T13:09:01.971669",
+    "created_at": "2026-05-24T13:09:01.971682"
+  },
+  {
+    "id": "O0029",
+    "candidate_id": "C0063",
+    "job_id": "J0005",
+    "salary_offered": 156052,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-05-27T13:09:01.971708",
+    "created_at": "2026-06-15T13:09:01.971720"
+  },
+  {
+    "id": "O0030",
+    "candidate_id": "C0431",
+    "job_id": "J0014",
+    "salary_offered": 193319,
+    "benefits": "Standard package",
+    "status": "rejected",
+    "sent_date": "2026-06-01T13:09:01.971748",
+    "created_at": "2026-06-08T13:09:01.971761"
+  },
+  {
+    "id": "O0031",
+    "candidate_id": "C0440",
+    "job_id": "J0011",
+    "salary_offered": 211784,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-18T13:09:01.971787",
+    "created_at": "2026-06-02T13:09:01.971800"
+  },
+  {
+    "id": "O0032",
+    "candidate_id": "C0012",
+    "job_id": "J0003",
+    "salary_offered": 87142,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-06T13:09:01.971827",
+    "created_at": "2026-05-30T13:09:01.971840"
+  },
+  {
+    "id": "O0033",
+    "candidate_id": "C0359",
+    "job_id": "J0009",
+    "salary_offered": 102520,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-13T13:09:01.971867",
+    "created_at": "2026-06-13T13:09:01.971880"
+  },
+  {
+    "id": "O0034",
+    "candidate_id": "C0342",
+    "job_id": "J0002",
+    "salary_offered": 204340,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-01T13:09:01.971908",
+    "created_at": "2026-06-14T13:09:01.971921"
+  },
+  {
+    "id": "O0035",
+    "candidate_id": "C0201",
+    "job_id": "J0007",
+    "salary_offered": 232885,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-09T13:09:01.971948",
+    "created_at": "2026-05-27T13:09:01.971961"
+  },
+  {
+    "id": "O0036",
+    "candidate_id": "C0218",
+    "job_id": "J0003",
+    "salary_offered": 57332,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-19T13:09:01.971987",
+    "created_at": "2026-06-04T13:09:01.972000"
+  },
+  {
+    "id": "O0037",
+    "candidate_id": "C0200",
+    "job_id": "J0001",
+    "salary_offered": 202184,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-02T13:09:01.972026",
+    "created_at": "2026-06-02T13:09:01.972040"
+  },
+  {
+    "id": "O0038",
+    "candidate_id": "C0458",
+    "job_id": "J0011",
+    "salary_offered": 212496,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-05-24T13:09:01.972066",
+    "created_at": "2026-05-24T13:09:01.972079"
+  },
+  {
+    "id": "O0039",
+    "candidate_id": "C0182",
+    "job_id": "J0003",
+    "salary_offered": 172659,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-22T13:09:01.972106",
+    "created_at": "2026-06-17T13:09:01.972119"
+  },
+  {
+    "id": "O0040",
+    "candidate_id": "C0184",
+    "job_id": "J0009",
+    "salary_offered": 181912,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-05-25T13:09:01.972150",
+    "created_at": "2026-05-31T13:09:01.972164"
+  },
+  {
+    "id": "O0041",
+    "candidate_id": "C0269",
+    "job_id": "J0007",
+    "salary_offered": 184491,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-02T13:09:01.972189",
+    "created_at": "2026-06-18T13:09:01.972201"
+  },
+  {
+    "id": "O0042",
+    "candidate_id": "C0181",
+    "job_id": "J0011",
+    "salary_offered": 238536,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-05-31T13:09:01.972233",
+    "created_at": "2026-05-26T13:09:01.972246"
+  },
+  {
+    "id": "O0043",
+    "candidate_id": "C0403",
+    "job_id": "J0003",
+    "salary_offered": 122965,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-20T13:09:01.972273",
+    "created_at": "2026-05-24T13:09:01.972286"
+  },
+  {
+    "id": "O0044",
+    "candidate_id": "C0430",
+    "job_id": "J0011",
+    "salary_offered": 176810,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-03T13:09:01.972311",
+    "created_at": "2026-06-01T13:09:01.972324"
+  },
+  {
+    "id": "O0045",
+    "candidate_id": "C0093",
+    "job_id": "J0010",
+    "salary_offered": 235729,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-05-31T13:09:01.972353",
+    "created_at": "2026-06-12T13:09:01.972378"
+  },
+  {
+    "id": "O0046",
+    "candidate_id": "C0302",
+    "job_id": "J0010",
+    "salary_offered": 141251,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-21T13:09:01.972402",
+    "created_at": "2026-06-22T13:09:01.972414"
+  },
+  {
+    "id": "O0047",
+    "candidate_id": "C0437",
+    "job_id": "J0012",
+    "salary_offered": 91727,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-01T13:09:01.972446",
+    "created_at": "2026-06-19T13:09:01.972459"
+  },
+  {
+    "id": "O0048",
+    "candidate_id": "C0256",
+    "job_id": "J0015",
+    "salary_offered": 228080,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-05-29T13:09:01.972484",
+    "created_at": "2026-06-15T13:09:01.972497"
+  },
+  {
+    "id": "O0049",
+    "candidate_id": "C0396",
+    "job_id": "J0013",
+    "salary_offered": 242059,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-05-25T13:09:01.972524",
+    "created_at": "2026-05-25T13:09:01.972537"
+  },
+  {
+    "id": "O0050",
+    "candidate_id": "C0090",
+    "job_id": "J0012",
+    "salary_offered": 150685,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-21T13:09:01.972567",
+    "created_at": "2026-06-03T13:09:01.972580"
+  },
+  {
+    "id": "O0051",
+    "candidate_id": "C0129",
+    "job_id": "J0002",
+    "salary_offered": 59808,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-05-29T13:09:01.972605",
+    "created_at": "2026-06-11T13:09:01.972619"
+  },
+  {
+    "id": "O0052",
+    "candidate_id": "C0311",
+    "job_id": "J0011",
+    "salary_offered": 57722,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-06-19T13:09:01.972645",
+    "created_at": "2026-05-31T13:09:01.972657"
+  },
+  {
+    "id": "O0053",
+    "candidate_id": "C0231",
+    "job_id": "J0007",
+    "salary_offered": 84921,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-14T13:09:01.972683",
+    "created_at": "2026-06-07T13:09:01.972695"
+  },
+  {
+    "id": "O0054",
+    "candidate_id": "C0225",
+    "job_id": "J0011",
+    "salary_offered": 124996,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-05-30T13:09:01.972721",
+    "created_at": "2026-06-17T13:09:01.972732"
+  },
+  {
+    "id": "O0055",
+    "candidate_id": "C0223",
+    "job_id": "J0014",
+    "salary_offered": 188550,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-04T13:09:01.972757",
+    "created_at": "2026-06-22T13:09:01.972770"
+  },
+  {
+    "id": "O0056",
+    "candidate_id": "C0323",
+    "job_id": "J0011",
+    "salary_offered": 75219,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-05-28T13:09:01.972806",
+    "created_at": "2026-06-18T13:09:01.972831"
+  },
+  {
+    "id": "O0057",
+    "candidate_id": "C0458",
+    "job_id": "J0001",
+    "salary_offered": 144256,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-05T13:09:01.972866",
+    "created_at": "2026-05-26T13:09:01.972878"
+  },
+  {
+    "id": "O0058",
+    "candidate_id": "C0037",
+    "job_id": "J0006",
+    "salary_offered": 98576,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-05-27T13:09:01.972898",
+    "created_at": "2026-06-16T13:09:01.972906"
+  },
+  {
+    "id": "O0059",
+    "candidate_id": "C0293",
+    "job_id": "J0014",
+    "salary_offered": 174186,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-03T13:09:01.972924",
+    "created_at": "2026-05-25T13:09:01.972931"
+  },
+  {
+    "id": "O0060",
+    "candidate_id": "C0287",
+    "job_id": "J0014",
+    "salary_offered": 86142,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-06-09T13:09:01.972948",
+    "created_at": "2026-06-02T13:09:01.972956"
+  },
+  {
+    "id": "O0061",
+    "candidate_id": "C0193",
+    "job_id": "J0014",
+    "salary_offered": 68577,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-05-28T13:09:01.972973",
+    "created_at": "2026-06-06T13:09:01.972981"
+  },
+  {
+    "id": "O0062",
+    "candidate_id": "C0153",
+    "job_id": "J0002",
+    "salary_offered": 80913,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-21T13:09:01.972997",
+    "created_at": "2026-06-03T13:09:01.973004"
+  },
+  {
+    "id": "O0063",
+    "candidate_id": "C0277",
+    "job_id": "J0006",
+    "salary_offered": 55909,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-05-24T13:09:01.973022",
+    "created_at": "2026-05-27T13:09:01.973029"
+  },
+  {
+    "id": "O0064",
+    "candidate_id": "C0129",
+    "job_id": "J0007",
+    "salary_offered": 234358,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-05-26T13:09:01.973046",
+    "created_at": "2026-05-26T13:09:01.973053"
+  },
+  {
+    "id": "O0065",
+    "candidate_id": "C0081",
+    "job_id": "J0005",
+    "salary_offered": 69602,
+    "benefits": "Full benefits, equity",
+    "status": "rejected",
+    "sent_date": "2026-05-24T13:09:01.973071",
+    "created_at": "2026-06-03T13:09:01.973078"
+  },
+  {
+    "id": "O0066",
+    "candidate_id": "C0257",
+    "job_id": "J0005",
+    "salary_offered": 154653,
+    "benefits": "Health insurance, 401k",
+    "status": "rejected",
+    "sent_date": "2026-05-31T13:09:01.973099",
+    "created_at": "2026-05-25T13:09:01.973106"
+  },
+  {
+    "id": "O0067",
+    "candidate_id": "C0057",
+    "job_id": "J0010",
+    "salary_offered": 173464,
+    "benefits": "Standard package",
+    "status": "rejected",
+    "sent_date": "2026-06-22T13:09:01.973126",
+    "created_at": "2026-06-21T13:09:01.973134"
+  },
+  {
+    "id": "O0068",
+    "candidate_id": "C0174",
+    "job_id": "J0007",
+    "salary_offered": 118388,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-05-25T13:09:01.973151",
+    "created_at": "2026-05-29T13:09:01.973159"
+  },
+  {
+    "id": "O0069",
+    "candidate_id": "C0031",
+    "job_id": "J0003",
+    "salary_offered": 103538,
+    "benefits": "Standard package",
+    "status": "rejected",
+    "sent_date": "2026-05-24T13:09:01.973177",
+    "created_at": "2026-05-25T13:09:01.973184"
+  },
+  {
+    "id": "O0070",
+    "candidate_id": "C0032",
+    "job_id": "J0004",
+    "salary_offered": 179382,
+    "benefits": "Health insurance, 401k",
+    "status": "rejected",
+    "sent_date": "2026-05-25T13:09:01.973201",
+    "created_at": "2026-06-03T13:09:01.973209"
+  },
+  {
+    "id": "O0071",
+    "candidate_id": "C0360",
+    "job_id": "J0014",
+    "salary_offered": 59269,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-09T13:09:01.973239",
+    "created_at": "2026-06-03T13:09:01.973246"
+  },
+  {
+    "id": "O0072",
+    "candidate_id": "C0379",
+    "job_id": "J0010",
+    "salary_offered": 71127,
+    "benefits": "Premium package",
+    "status": "pending",
+    "sent_date": "2026-06-14T13:09:01.973268",
+    "created_at": "2026-05-30T13:09:01.973286"
+  },
+  {
+    "id": "O0073",
+    "candidate_id": "C0022",
+    "job_id": "J0002",
+    "salary_offered": 59332,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-15T13:09:01.973314",
+    "created_at": "2026-06-02T13:09:01.973327"
+  },
+  {
+    "id": "O0074",
+    "candidate_id": "C0180",
+    "job_id": "J0007",
+    "salary_offered": 175198,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-22T13:09:01.973354",
+    "created_at": "2026-05-24T13:09:01.973367"
+  },
+  {
+    "id": "O0075",
+    "candidate_id": "C0029",
+    "job_id": "J0001",
+    "salary_offered": 101425,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-01T13:09:01.973403",
+    "created_at": "2026-05-30T13:09:01.973417"
+  },
+  {
+    "id": "O0076",
+    "candidate_id": "C0010",
+    "job_id": "J0009",
+    "salary_offered": 176398,
+    "benefits": "Health insurance, 401k",
+    "status": "accepted",
+    "sent_date": "2026-05-29T13:09:01.973444",
+    "created_at": "2026-06-10T13:09:01.973458"
+  },
+  {
+    "id": "O0077",
+    "candidate_id": "C0357",
+    "job_id": "J0003",
+    "salary_offered": 162648,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-06-18T13:09:01.973483",
+    "created_at": "2026-06-19T13:09:01.973496"
+  },
+  {
+    "id": "O0078",
+    "candidate_id": "C0225",
+    "job_id": "J0002",
+    "salary_offered": 211389,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-16T13:09:01.973529",
+    "created_at": "2026-06-12T13:09:01.973549"
+  },
+  {
+    "id": "O0079",
+    "candidate_id": "C0224",
+    "job_id": "J0015",
+    "salary_offered": 65184,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-20T13:09:01.973569",
+    "created_at": "2026-06-04T13:09:01.973577"
+  },
+  {
+    "id": "O0080",
+    "candidate_id": "C0006",
+    "job_id": "J0004",
+    "salary_offered": 158282,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-05-26T13:09:01.973596",
+    "created_at": "2026-05-30T13:09:01.973604"
+  },
+  {
+    "id": "O0081",
+    "candidate_id": "C0128",
+    "job_id": "J0014",
+    "salary_offered": 64911,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-18T13:09:01.973621",
+    "created_at": "2026-06-08T13:09:01.973630"
+  },
+  {
+    "id": "O0082",
+    "candidate_id": "C0093",
+    "job_id": "J0005",
+    "salary_offered": 61460,
+    "benefits": "Standard package",
+    "status": "accepted",
+    "sent_date": "2026-06-03T13:09:01.973646",
+    "created_at": "2026-06-02T13:09:01.973654"
+  },
+  {
+    "id": "O0083",
+    "candidate_id": "C0456",
+    "job_id": "J0004",
+    "salary_offered": 126654,
+    "benefits": "Full benefits, equity",
+    "status": "rejected",
+    "sent_date": "2026-06-10T13:09:01.973671",
+    "created_at": "2026-06-07T13:09:01.973679"
+  },
+  {
+    "id": "O0084",
+    "candidate_id": "C0337",
+    "job_id": "J0002",
+    "salary_offered": 222121,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-14T13:09:01.973696",
+    "created_at": "2026-06-05T13:09:01.973704"
+  },
+  {
+    "id": "O0085",
+    "candidate_id": "C0106",
+    "job_id": "J0008",
+    "salary_offered": 234878,
+    "benefits": "Standard package",
+    "status": "pending",
+    "sent_date": "2026-06-08T13:09:01.973722",
+    "created_at": "2026-05-31T13:09:01.973730"
+  },
+  {
+    "id": "O0086",
+    "candidate_id": "C0155",
+    "job_id": "J0006",
+    "salary_offered": 194547,
+    "benefits": "Standard package",
+    "status": "rejected",
+    "sent_date": "2026-06-15T13:09:01.973748",
+    "created_at": "2026-06-06T13:09:01.973756"
+  },
+  {
+    "id": "O0087",
+    "candidate_id": "C0458",
+    "job_id": "J0005",
+    "salary_offered": 133586,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-11T13:09:01.973773",
+    "created_at": "2026-05-25T13:09:01.973781"
+  },
+  {
+    "id": "O0088",
+    "candidate_id": "C0211",
+    "job_id": "J0012",
+    "salary_offered": 213019,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-20T13:09:01.973798",
+    "created_at": "2026-06-16T13:09:01.973805"
+  },
+  {
+    "id": "O0089",
+    "candidate_id": "C0467",
+    "job_id": "J0003",
+    "salary_offered": 186575,
+    "benefits": "Full benefits, equity",
+    "status": "accepted",
+    "sent_date": "2026-05-30T13:09:01.973822",
+    "created_at": "2026-06-05T13:09:01.973829"
+  },
+  {
+    "id": "O0090",
+    "candidate_id": "C0108",
+    "job_id": "J0002",
+    "salary_offered": 147619,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-15T13:09:01.973847",
+    "created_at": "2026-05-31T13:09:01.973854"
+  },
+  {
+    "id": "O0091",
+    "candidate_id": "C0226",
+    "job_id": "J0011",
+    "salary_offered": 168951,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-07T13:09:01.973872",
+    "created_at": "2026-05-27T13:09:01.973879"
+  },
+  {
+    "id": "O0092",
+    "candidate_id": "C0018",
+    "job_id": "J0005",
+    "salary_offered": 122867,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-05-27T13:09:01.973896",
+    "created_at": "2026-06-20T13:09:01.973904"
+  },
+  {
+    "id": "O0093",
+    "candidate_id": "C0031",
+    "job_id": "J0005",
+    "salary_offered": 209841,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-22T13:09:01.973921",
+    "created_at": "2026-05-26T13:09:01.973928"
+  },
+  {
+    "id": "O0094",
+    "candidate_id": "C0196",
+    "job_id": "J0007",
+    "salary_offered": 166397,
+    "benefits": "Health insurance, 401k",
+    "status": "pending",
+    "sent_date": "2026-06-16T13:09:01.973950",
+    "created_at": "2026-06-10T13:09:01.973958"
+  },
+  {
+    "id": "O0095",
+    "candidate_id": "C0095",
+    "job_id": "J0011",
+    "salary_offered": 163006,
+    "benefits": "Health insurance, 401k",
+    "status": "rejected",
+    "sent_date": "2026-06-13T13:09:01.973976",
+    "created_at": "2026-06-21T13:09:01.973983"
+  },
+  {
+    "id": "O0096",
+    "candidate_id": "C0278",
+    "job_id": "J0013",
+    "salary_offered": 141174,
+    "benefits": "Health insurance, 401k",
+    "status": "rejected",
+    "sent_date": "2026-05-29T13:09:01.974001",
+    "created_at": "2026-05-25T13:09:01.974008"
+  },
+  {
+    "id": "O0097",
+    "candidate_id": "C0173",
+    "job_id": "J0015",
+    "salary_offered": 118821,
+    "benefits": "Full benefits, equity",
+    "status": "pending",
+    "sent_date": "2026-06-12T13:09:01.974027",
+    "created_at": "2026-05-30T13:09:01.974034"
+  },
+  {
+    "id": "O0098",
+    "candidate_id": "C0425",
+    "job_id": "J0010",
+    "salary_offered": 163790,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-05-24T13:09:01.974052",
+    "created_at": "2026-05-30T13:09:01.974059"
+  },
+  {
+    "id": "O0099",
+    "candidate_id": "C0386",
+    "job_id": "J0001",
+    "salary_offered": 78628,
+    "benefits": "Premium package",
+    "status": "rejected",
+    "sent_date": "2026-05-24T13:09:01.974076",
+    "created_at": "2026-06-01T13:09:01.974084"
+  },
+  {
+    "id": "O0100",
+    "candidate_id": "C0148",
+    "job_id": "J0014",
+    "salary_offered": 190184,
+    "benefits": "Premium package",
+    "status": "accepted",
+    "sent_date": "2026-06-04T13:09:01.974101",
+    "created_at": "2026-05-30T13:09:01.974109"
+  }
+]

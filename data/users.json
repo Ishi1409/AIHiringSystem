@@ -1,0 +1,26 @@
+[
+  {
+    "id": "57421644",
+    "email": "pratyushtiwari446@gmail.com",
+    "password": "123456",
+    "name": "Pratyush",
+    "role": "hr",
+    "created_at": "2026-06-23T07:22:03.350782"
+  },
+  {
+    "id": "f86c3010",
+    "email": "ishikasrivastava106@gmail.com",
+    "password": "123456",
+    "name": "Ishika",
+    "role": "candidate",
+    "created_at": "2026-06-23T07:23:29.070854"
+  },
+  {
+    "id": "aac3b5e5",
+    "email": "Test@Example.com",
+    "password": "pass123",
+    "name": "Test User",
+    "role": "hr",
+    "created_at": "2026-06-23T07:25:53.911688"
+  }
+]

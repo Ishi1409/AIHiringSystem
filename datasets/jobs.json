@@ -1,0 +1,235 @@
+[
+  {
+    "id": "J0001",
+    "title": "Software Engineer",
+    "description": "We are looking for a talented Software Engineer to join our team at Microsoft.",
+    "skills": [
+      "Rust",
+      "JavaScript",
+      "Swift",
+      "C#",
+      "Kotlin",
+      "C++",
+      "Go"
+    ],
+    "experience_required": 4,
+    "status": "open",
+    "created_at": "2026-04-07T13:09:01.924302"
+  },
+  {
+    "id": "J0002",
+    "title": "Data Scientist",
+    "description": "We are looking for a talented Data Scientist to join our team at Spotify.",
+    "skills": [
+      "scikit-learn",
+      "spaCy",
+      "Keras",
+      "XGBoost"
+    ],
+    "experience_required": 5,
+    "status": "closed",
+    "created_at": "2026-01-07T13:09:01.924418"
+  },
+  {
+    "id": "J0003",
+    "title": "ML Engineer",
+    "description": "We are looking for a talented ML Engineer to join our team at Palantir.",
+    "skills": [
+      "OpenCV",
+      "NLTK",
+      "PyTorch",
+      "scikit-learn"
+    ],
+    "experience_required": 3,
+    "status": "closed",
+    "created_at": "2026-05-14T13:09:01.924523"
+  },
+  {
+    "id": "J0004",
+    "title": "DevOps Engineer",
+    "description": "We are looking for a talented DevOps Engineer to join our team at Palantir.",
+    "skills": [
+      "Jenkins",
+      "Prometheus",
+      "AWS",
+      "Kubernetes",
+      "Azure"
+    ],
+    "experience_required": 7,
+    "status": "open",
+    "created_at": "2026-03-30T13:09:01.924603"
+  },
+  {
+    "id": "J0005",
+    "title": "Product Manager",
+    "description": "We are looking for a talented Product Manager to join our team at Google.",
+    "skills": [
+      "Critical Thinking",
+      "Project Management",
+      "Time Management"
+    ],
+    "experience_required": 2,
+    "status": "closed",
+    "created_at": "2026-04-27T13:09:01.924675"
+  },
+  {
+    "id": "J0006",
+    "title": "HR Manager",
+    "description": "We are looking for a talented HR Manager to join our team at Flipkart.",
+    "skills": [
+      "Communication",
+      "Project Management",
+      "Problem Solving",
+      "Time Management",
+      "Critical Thinking",
+      "Conflict Resolution"
+    ],
+    "experience_required": 8,
+    "status": "open",
+    "created_at": "2026-02-07T13:09:01.924756"
+  },
+  {
+    "id": "J0007",
+    "title": "Marketing Analyst",
+    "description": "We are looking for a talented Marketing Analyst to join our team at Netflix.",
+    "skills": [
+      "SPSS",
+      "Power BI",
+      "SAS",
+      "MATLAB",
+      "Pandas"
+    ],
+    "experience_required": 6,
+    "status": "closed",
+    "created_at": "2026-02-20T13:09:01.924836"
+  },
+  {
+    "id": "J0008",
+    "title": "Backend Developer",
+    "description": "We are looking for a talented Backend Developer to join our team at TCS.",
+    "skills": [
+      "JavaScript",
+      "C++",
+      "Python",
+      "C#",
+      "Kotlin",
+      "Java",
+      "Go"
+    ],
+    "experience_required": 5,
+    "status": "open",
+    "created_at": "2026-03-05T13:09:01.924946"
+  },
+  {
+    "id": "J0009",
+    "title": "Frontend Developer",
+    "description": "We are looking for a talented Frontend Developer to join our team at Amazon.",
+    "skills": [
+      "Node.js",
+      "Django",
+      "Angular",
+      "Vue.js",
+      "FastAPI",
+      "Spring Boot",
+      "React"
+    ],
+    "experience_required": 5,
+    "status": "closed",
+    "created_at": "2026-06-20T13:09:01.925034"
+  },
+  {
+    "id": "J0010",
+    "title": "Full Stack Developer",
+    "description": "We are looking for a talented Full Stack Developer to join our team at Palantir.",
+    "skills": [
+      "Next.js",
+      "Vue.js",
+      "Express",
+      "Node.js",
+      "Django",
+      "Flask"
+    ],
+    "experience_required": 1,
+    "status": "closed",
+    "created_at": "2026-05-10T13:09:01.925102"
+  },
+  {
+    "id": "J0011",
+    "title": "Data Analyst",
+    "description": "We are looking for a talented Data Analyst to join our team at Goldman Sachs.",
+    "skills": [
+      "Tableau",
+      "SQL",
+      "NumPy",
+      "SAS",
+      "MATLAB",
+      "Power BI",
+      "R"
+    ],
+    "experience_required": 4,
+    "status": "open",
+    "created_at": "2026-04-09T13:09:01.925151"
+  },
+  {
+    "id": "J0012",
+    "title": "Cloud Architect",
+    "description": "We are looking for a talented Cloud Architect to join our team at TCS.",
+    "skills": [
+      "GitHub Actions",
+      "Kubernetes",
+      "Ansible",
+      "Azure",
+      "AWS"
+    ],
+    "experience_required": 1,
+    "status": "closed",
+    "created_at": "2026-01-15T13:09:01.925193"
+  },
+  {
+    "id": "J0013",
+    "title": "UX Designer",
+    "description": "We are looking for a talented UX Designer to join our team at Deloitte.",
+    "skills": [
+      "React",
+      "Flask",
+      "FastAPI",
+      "Django",
+      "Node.js",
+      "Vue.js"
+    ],
+    "experience_required": 6,
+    "status": "open",
+    "created_at": "2026-05-28T13:09:01.925237"
+  },
+  {
+    "id": "J0014",
+    "title": "Security Engineer",
+    "description": "We are looking for a talented Security Engineer to join our team at Airbnb.",
+    "skills": [
+      "Rust",
+      "TypeScript",
+      "Java",
+      "C++",
+      "Go",
+      "Swift"
+    ],
+    "experience_required": 8,
+    "status": "closed",
+    "created_at": "2026-03-19T13:09:01.925285"
+  },
+  {
+    "id": "J0015",
+    "title": "Business Analyst",
+    "description": "We are looking for a talented Business Analyst to join our team at JPMorgan.",
+    "skills": [
+      "Excel",
+      "R",
+      "SQL",
+      "Power BI",
+      "MATLAB"
+    ],
+    "experience_required": 7,
+    "status": "open",
+    "created_at": "2026-03-23T13:09:01.925325"
+  }
+]

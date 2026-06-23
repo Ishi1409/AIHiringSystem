@@ -32,11 +32,12 @@ def show():
 
                 if st.button("🚀 Upload & Parse with AI", use_container_width=True, type="primary"):
                     with st.spinner("🤖 AI is parsing your resume..."):
-                        result = upload_resume("local-user", uploaded_file)
-                        if result:
-                            st.session_state["last_parse"] = result
-                            st.balloons()
-                            st.rerun()
+                        user_id = st.session_state.get("user_id", "local-user")
+                        result = upload_resume(user_id, uploaded_file)
+                    if result:
+                        st.session_state["last_parse"] = result
+                        st.balloons()
+                        st.rerun()
 
         with col_b:
             last = st.session_state.get("last_parse")

@@ -1,7 +1,7 @@
 """
-Local JSON-based database client.
-Replaces Supabase entirely — works offline, no credentials needed.
-Uses pandas + numpy for data science operations on stored data.
+Hybrid client: Supabase for auth + local JSON for business data.
+Keeps everything working offline for data operations while
+Supabase handles user authentication securely.
 """
 import os
 import json
@@ -14,12 +14,45 @@ import pandas as pd
 import numpy as np
 import PyPDF2
 from docx import Document
+from dotenv import load_dotenv
+from supabase import create_client
 
 from services.resume_parser import parse_resume_text
 from services.skill_extractor import SKILL_DB, extract_skills
 from services.job_matcher import match_skills
 from services.candidate_ranker import rank_candidates, calculate_experience_years
+from services.ml_models import get_sentiment_model, get_offer_predictor, models_available as ml_available
 
+load_dotenv()
+
+# ── Supabase Auth Client ──────────────────────────────────────────
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+_supabase = None
+_supabase_available = False
+
+_is_placeholder = (
+    not SUPABASE_URL
+    or not SUPABASE_KEY
+    or "your-project-id" in SUPABASE_URL
+    or "placeholder" in SUPABASE_URL
+    or SUPABASE_KEY.startswith("your-")
+)
+
+if not _is_placeholder:
+    try:
+        _supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+        _supabase_available = True
+    except Exception:
+        _supabase_available = False
+
+
+def is_supabase_available():
+    return _supabase_available
+
+
+# ── Local JSON Storage (for business data) ────────────────────────
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -51,11 +84,28 @@ def _now():
     return datetime.utcnow().isoformat()
 
 
-# ── Auth (local mock) ──────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════
+# SUPABASE AUTH
+# ═══════════════════════════════════════════════════════════════════
 
 def sign_up(email, password, name, role="candidate"):
+    """Register via Supabase Auth. Falls back to local JSON if Supabase fails or is unavailable."""
+    if _supabase_available:
+        try:
+            res = _supabase.auth.sign_up({"email": email, "password": password})
+            if not res.user:
+                return None, "Registration failed"
+            # Store profile
+            _supabase.table("profiles").insert({
+                "id": res.user.id, "email": email, "name": name, "role": role,
+            }).execute()
+            return {"user_id": res.user.id}, None
+        except Exception:
+            pass  # fall back to local JSON below
+
+    # Fallback: local JSON
     users = _read_json(_USERS_FILE)
-    if any(u["email"] == email for u in users):
+    if any(u["email"].lower() == email.lower() for u in users):
         return None, "Email already registered"
     user = {
         "id": _gen_id(), "email": email, "password": password,
@@ -67,9 +117,23 @@ def sign_up(email, password, name, role="candidate"):
 
 
 def sign_in(email, password):
+    """Login via Supabase Auth. Falls back to local JSON if Supabase fails or is unavailable."""
+    if _supabase_available:
+        try:
+            res = _supabase.auth.sign_in_with_password({"email": email, "password": password})
+            if not res.user:
+                return None, "Invalid credentials"
+            return {
+                "access_token": res.session.access_token,
+                "user": {"id": res.user.id, "email": res.user.email},
+            }, None
+        except Exception:
+            pass  # fall back to local JSON below
+
+    # Fallback: local JSON
     users = _read_json(_USERS_FILE)
     for u in users:
-        if u["email"] == email and u["password"] == password:
+        if u["email"].lower() == email.lower() and u["password"] == password:
             return {
                 "access_token": f"local-token-{u['id']}",
                 "user": {"id": u["id"], "email": u["email"]},
@@ -77,17 +141,53 @@ def sign_in(email, password):
     return None, "Invalid credentials"
 
 
+def sign_out(token):
+    """Sign out from Supabase."""
+    if _supabase_available and token and not token.startswith("local-token"):
+        try:
+            _supabase.auth.sign_out()
+        except Exception:
+            pass
+
+
 def get_user(token):
-    return {"id": "local-user"} if token else None
+    """Get user from Supabase or local fallback."""
+    if _supabase_available and token and not token.startswith("local-token"):
+        try:
+            res = _supabase.auth.get_user(token)
+            if res and res.user:
+                return res.user
+        except Exception:
+            pass
+    # Local fallback
+    users = _read_json(_USERS_FILE)
+    for u in users:
+        uid = u.get("id")
+        if uid and token and (token.endswith(uid) or uid in token):
+            return {"id": uid, "email": u.get("email")}
+    return {"id": "local-user", "email": "local@example.com"} if token else None
 
 
 def get_profile(user_id):
+    """Get user profile from Supabase or local fallback."""
+    if _supabase_available and user_id and user_id != "local-user":
+        try:
+            res = _supabase.table("profiles").select("*").eq("id", user_id).execute()
+            if res.data:
+                return res.data[0]
+        except Exception:
+            pass
+    # Local fallback
     users = _read_json(_USERS_FILE)
     for u in users:
         if u["id"] == user_id:
             return u
-    return {"id": user_id, "name": "Local User", "email": "local@example.com"}
+    return {"id": user_id, "name": "User", "email": "user@example.com"}
 
+
+# ═══════════════════════════════════════════════════════════════════
+# BUSINESS DATA (all local JSON — no Supabase dependency)
+# ═══════════════════════════════════════════════════════════════════
 
 # ── Resumes ────────────────────────────────────────────────────────
 
@@ -241,6 +341,22 @@ def create_interview(candidate_id, job_id, interview_type="technical", scheduled
     return interview
 
 
+def analyze_interview_sentiment(transcript):
+    """Score interview transcript sentiment using trained ML model."""
+    model = get_sentiment_model()
+    if not model:
+        return 0.0
+    try:
+        pred = model.predict([transcript])[0]
+        proba = model.predict_proba([transcript])[0]
+        confidence = max(proba)
+        # Map class (0=neg, 1=neutral, 2=pos) to -1..1 score
+        score_map = {0: -confidence, 1: 0.0, 2: confidence}
+        return round(score_map.get(pred, 0.0), 2)
+    except Exception:
+        return 0.0
+
+
 def list_interviews():
     return _read_json(_INTERVIEWS_FILE)
 
@@ -281,6 +397,31 @@ def create_offer(candidate_id, job_id, salary_offered, benefits=""):
         "expiry_date": None, "accepted_date": None,
         "created_at": _now(),
     }
+
+    # Predict acceptance probability using ML model
+    predictor = get_offer_predictor()
+    if predictor:
+        try:
+            model = predictor["model"]
+            scaler = predictor["scaler"]
+            candidates = _read_json(_CANDIDATES_FILE)
+            jobs = _read_json(_JOBS_FILE)
+            c = next((c for c in candidates if c["id"] == candidate_id), None)
+            j = next((j for j in jobs if j["id"] == job_id), None)
+            if c:
+                features = [[
+                    salary_offered,
+                    len(c.get("skills", []) or []),
+                    c.get("experience_years", 0),
+                    c.get("score", 50),
+                    j.get("experience_required", 0) if j else 0,
+                ]]
+                X = scaler.transform(features)
+                prob = model.predict_proba(X)[0][1]
+                offer["acceptance_probability"] = round(prob, 2)
+        except Exception:
+            pass
+
     offers.append(offer)
     _write_json(_OFFERS_FILE, offers)
     return offer
@@ -323,7 +464,9 @@ def get_chat_messages(session_id):
     return _read_json(path) if os.path.exists(path) else []
 
 
-# ── Dashboard / Analytics (data-science powered) ──────────────────
+# ═══════════════════════════════════════════════════════════════════
+# DASHBOARD / ANALYTICS (data-science powered)
+# ═══════════════════════════════════════════════════════════════════
 
 def match_candidates_for_job(job_id):
     job = get_job(job_id)
@@ -363,104 +506,101 @@ def match_candidates_for_job(job_id):
 
 def get_dashboard():
     """Data-science powered dashboard with analytics."""
-    resumes = _read_json(_RESUMES_FILE)
-    jobs = _read_json(_JOBS_FILE)
-    candidates = _read_json(_CANDIDATES_FILE)
-    interviews = _read_json(_INTERVIEWS_FILE)
-    offers = _read_json(_OFFERS_FILE)
+    try:
+        resumes = _read_json(_RESUMES_FILE)
+        jobs = _read_json(_JOBS_FILE)
+        candidates = _read_json(_CANDIDATES_FILE)
+        interviews = _read_json(_INTERVIEWS_FILE)
+        offers = _read_json(_OFFERS_FILE)
 
-    total_candidates = len(set(r["user_id"] for r in resumes)) + len(candidates)
-    total_resumes = len(resumes)
-    total_jobs = len(jobs)
-    total_interviews = len(interviews)
-    total_offers = len(offers)
-    accepted_offers = sum(1 for o in offers if o.get("status") == "accepted")
+        total_candidates = len(set(r["user_id"] for r in resumes)) + len(candidates)
+        total_resumes = len(resumes)
+        total_jobs = len(jobs)
+        total_interviews = len(interviews)
+        total_offers = len(offers)
+        accepted_offers = sum(1 for o in offers if o.get("status") == "accepted")
 
-    # Skill gap analysis
-    all_skills_counts = Counter()
-    for r in resumes:
-        for s in r.get("skills", []):
-            all_skills_counts[s.lower()] += 1
-    for c in candidates:
-        for s in c.get("skills", []):
-            all_skills_counts[s.lower()] += 1
+        # Skill gap analysis
+        all_skills_counts = Counter()
+        for r in resumes:
+            for s in r.get("skills", []):
+                all_skills_counts[s.lower()] += 1
+        for c in candidates:
+            for s in c.get("skills", []):
+                all_skills_counts[s.lower()] += 1
 
-    total_people = total_candidates or 1
-    skill_gaps = [
-        {"skill": skill, "count": count, "pct": round(count / total_people * 100, 1)}
-        for skill, count in all_skills_counts.most_common(20)
-    ]
+        total_people = total_candidates or 1
+        skill_gaps = [
+            {"skill": skill, "count": count, "pct": round(count / total_people * 100, 1)}
+            for skill, count in all_skills_counts.most_common(20)
+        ]
 
-    # Education distribution
-    edu_levels = Counter()
-    for r in resumes:
-        for edu in r.get("education", []):
-            el = edu.lower()
-            if "phd" in el or "ph.d" in el: edu_levels["PhD"] += 1
-            elif "master" in el or "m.tech" in el or "m.sc" in el: edu_levels["Master"] += 1
-            elif "bachelor" in el or "b.tech" in el or "b.sc" in el: edu_levels["Bachelor"] += 1
-            else: edu_levels["Other"] += 1
-    education_dist = [{"level": k, "count": v} for k, v in edu_levels.items()]
+        # Education distribution
+        edu_levels = Counter()
+        for r in resumes:
+            for edu in r.get("education", []):
+                el = edu.lower()
+                if "phd" in el or "ph.d" in el: edu_levels["PhD"] += 1
+                elif "master" in el or "m.tech" in el or "m.sc" in el: edu_levels["Master"] += 1
+                elif "bachelor" in el or "b.tech" in el or "b.sc" in el: edu_levels["Bachelor"] += 1
+                else: edu_levels["Other"] += 1
+        education_dist = [{"level": k, "count": v} for k, v in edu_levels.items()]
 
-    # Top candidates
-    all_skills = set()
-    for j in jobs:
-        all_skills.update(j.get("skills", []))
+        # Top candidates
+        all_skills = set()
+        for j in jobs:
+            all_skills.update(j.get("skills", []))
+        people_list = []
+        for r in resumes:
+            result = match_skills(r.get("skills", []), list(all_skills))
+            people_list.append({
+                "name": r.get("parsed_name", "Unknown"), "skills": r.get("skills", []),
+                "match_percentage": result["match_percentage"],
+                "experience_years": calculate_experience_years(r.get("education", [])),
+            })
+        for c in candidates:
+            result = match_skills(c.get("skills", []), list(all_skills))
+            people_list.append({
+                "name": c.get("name", "Unknown"), "skills": c.get("skills", []),
+                "match_percentage": result["match_percentage"],
+                "experience_years": c.get("experience_years", 0),
+            })
+        top_candidates = rank_candidates(people_list)[:10]
 
-    people_list = []
-    for r in resumes:
-        result = match_skills(r.get("skills", []), list(all_skills))
-        people_list.append({
-            "name": r.get("parsed_name", "Unknown"), "skills": r.get("skills", []),
-            "match_percentage": result["match_percentage"],
-            "experience_years": calculate_experience_years(r.get("education", [])),
-        })
-    for c in candidates:
-        result = match_skills(c.get("skills", []), list(all_skills))
-        people_list.append({
-            "name": c.get("name", "Unknown"), "skills": c.get("skills", []),
-            "match_percentage": result["match_percentage"],
-            "experience_years": c.get("experience_years", 0),
-        })
+        # Interview analytics
+        avg_sentiment = 0.0
+        if interviews:
+            scores = [iv.get("sentiment_score", 0) for iv in interviews]
+            avg_sentiment = round(np.mean(scores), 2)
 
-    top_candidates = rank_candidates(people_list)[:10]
+        # Status funnel
+        status_funnel = {
+            "new": sum(1 for c in candidates if c.get("status") == "new"),
+            "screened": sum(1 for c in candidates if c.get("status") == "screened"),
+            "interviewed": sum(1 for c in candidates if c.get("status") == "interviewed"),
+            "offered": sum(1 for c in candidates if c.get("status") == "offered"),
+            "hired": sum(1 for c in candidates if c.get("status") == "hired"),
+        }
+        if resumes:
+            status_funnel["new"] += len(resumes)
 
-    # Interview analytics
-    avg_sentiment = 0.0
-    if interviews:
-        scores = [iv.get("sentiment_score", 0) for iv in interviews]
-        avg_sentiment = round(np.mean(scores), 2)
-
-    # Status funnel
-    status_funnel = {
-        "new": sum(1 for c in candidates if c.get("status") == "new"),
-        "screened": sum(1 for c in candidates if c.get("status") == "screened"),
-        "interviewed": sum(1 for c in candidates if c.get("status") == "interviewed"),
-        "offered": sum(1 for c in candidates if c.get("status") == "offered"),
-        "hired": sum(1 for c in candidates if c.get("status") == "hired"),
-    }
-    # Also count resume uploads as candidates
-    if resumes:
-        status_funnel["new"] += len(resumes)
-
-    # Hiring trends (last 6 months)
-    trends = {}
-    for o in offers:
-        if o.get("accepted_date"):
-            month = o["accepted_date"][:7]
-            trends[month] = trends.get(month, 0) + 1
-
-    return {
-        "total_candidates": total_candidates,
-        "total_resumes": total_resumes,
-        "total_jobs": total_jobs,
-        "total_interviews": total_interviews,
-        "total_offers": total_offers,
-        "accepted_offers": accepted_offers,
-        "top_candidates": top_candidates,
-        "skill_gaps": skill_gaps,
-        "education_distribution": education_dist,
-        "status_funnel": status_funnel,
-        "avg_sentiment": avg_sentiment,
-        "hiring_trends": trends,
-    }
+        return {
+            "total_candidates": total_candidates,
+            "total_resumes": total_resumes,
+            "total_jobs": total_jobs,
+            "total_interviews": total_interviews,
+            "total_offers": total_offers,
+            "accepted_offers": accepted_offers,
+            "top_candidates": top_candidates,
+            "skill_gaps": skill_gaps,
+            "education_distribution": education_dist,
+            "status_funnel": status_funnel,
+            "avg_sentiment": avg_sentiment,
+        }
+    except Exception:
+        return {
+            "total_candidates": 0, "total_resumes": 0, "total_jobs": 0,
+            "total_interviews": 0, "total_offers": 0, "accepted_offers": 0,
+            "top_candidates": [], "skill_gaps": [], "education_distribution": [],
+            "status_funnel": {}, "avg_sentiment": 0.0,
+        }
