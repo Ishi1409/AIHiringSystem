@@ -117,6 +117,12 @@ def show_register():
 # ── Main App (authenticated) ──────────────────────────────────────
 
 def main_app():
+    # Hide native Streamlit sidebar nav links (from pages/ folder)
+    st.markdown(
+        "<style>[data-testid='stSidebarNav'] {display: none;}</style>",
+        unsafe_allow_html=True,
+    )
+
     # Top bar
     status_icon = "🔒" if is_supabase_available() else "⚡"
     status_text = "Supabase" if is_supabase_available() else "Local Auth"
@@ -212,6 +218,10 @@ def main_app():
 # ── Router ─────────────────────────────────────────────────────────
 
 if not st.session_state.access_token:
+    st.markdown(
+        "<style>[data-testid='stSidebar'] {display: none;} [data-testid='stSidebarCollapseButton'] {display: none;}</style>",
+        unsafe_allow_html=True,
+    )
     page = st.session_state.page
     if page == "register":
         show_register()
