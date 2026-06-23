@@ -1,0 +1,12 @@
+# ── UI ──
+streamlit>=1.42,<2
+
+# ── Resume Parsing ──
+spacy>=3.8,<4
+PyPDF2>=3.0,<4
+python-docx>=1.1,<2
+
+# ── ML / Data Science ──
+scikit-learn>=1.6,<2
+pandas>=2.2,<3
+numpy>=2.2,<3
